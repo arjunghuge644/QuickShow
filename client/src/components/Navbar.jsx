@@ -18,9 +18,14 @@ const Navbar = () => {
       </Link>
 
       <div
-        className={`max-md:absolute max-md:top-0 max-md:left-0 max-md:font-medium max-md:text-lg z-50 flex flex-col md:flex-row md:rounded-full items-center max-md:justify-center gap-8 py-3 max-md:h-screen backdrop-blur bg-black/70 md:bg-white/10 md:border border-gray-300/20 overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-md:w-full" : "max-md:w-0"
-        }`}
+        className={`z-50 flex flex-col md:flex-row items-center gap-8 py-3 px-8
+backdrop-blur bg-black/70 md:bg-white/10 md:border md:border-gray-300/20 md:rounded-full
+transition-all duration-300 overflow-hidden
+
+max-md:fixed max-md:top-0 max-md:left-0 max-md:h-screen
+max-md:justify-center max-md:text-lg max-md:font-medium
+
+${isOpen ? " max-md:w-full max-md:opacity-100" : " max-md:w-0 max-md:opacity-0"}`}
       >
         <XIcon
           className="md:hidden absolute top-6 right-6 w-6 h-6 cursor-pointer"
@@ -89,7 +94,7 @@ const Navbar = () => {
               <UserButton.Action
                 label="My Bookings"
                 labelIcon={<TicketPlus width={15} />}
-                onClick={() => navigate('/my-bookings')}
+                onClick={() => navigate("/my-bookings")}
               />
             </UserButton.MenuItems>
           </UserButton>
