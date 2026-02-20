@@ -11,5 +11,5 @@ const Home = () => {
       <TrailerSection />
     </>
   );
-}       
+};
 export default Home;
